@@ -67,9 +67,9 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the get favorite movies for a user endpoint
-  public getFavoriteMovie(movie: any): Observable<any> {
+  public getFavoriteMovies(): Observable<any> {
     return this.http
-      .get(apiUrl + 'users/username/movies/' + movie)
+      .get(apiUrl + 'users/username/movies')
       .pipe(catchError(this.handleError));
   }
 
