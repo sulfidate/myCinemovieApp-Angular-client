@@ -76,14 +76,14 @@ export class UserRegistrationService {
   // Making the api call for the add a movie to favorite movies endpoint
   public addFavoriteMovie(movie: any): Observable<any> {
     return this.http
-      .post(apiUrl + 'users/username/movies/' + movie)
+      .post(apiUrl + 'users/username/movies/' + movie, movie)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the edit user endpoint
   public editUser(username: any): Observable<any> {
     return this.http
-      .put(apiUrl + 'users/' + username)
+      .put(apiUrl + 'users/' + username, username)
       .pipe(catchError(this.handleError));
   }
 
