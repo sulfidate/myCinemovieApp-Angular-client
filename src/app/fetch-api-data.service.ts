@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpHeaders,
-  HttpErrorResponse,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 // Declare the api url that will provide data for the client app
 const apiUrl = 'https://mycinemoviedatabase.herokuapp.com/';
@@ -29,7 +25,7 @@ export class UserRegistrationService {
   public userLogin(userDetails: any): Observable<any> {
     console.log('userDetails', userDetails);
     return this.http
-      .post(apiUrl + 'users/login', userDetails)
+      .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
 
