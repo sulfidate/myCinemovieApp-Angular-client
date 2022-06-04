@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 // Declare the api url that will provide data for the client app
 const apiUrl = 'https://mycinemoviedatabase.herokuapp.com/';
 @Injectable({
   providedIn: 'root',
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class,making it available via this.http
   constructor(private http: HttpClient) {}
@@ -30,71 +34,90 @@ export class UserRegistrationService {
   }
 
   // Making the api call for the get all movies endpoint
-  public getAllMovies(): Observable<any> {
-    return this.http.get(apiUrl + 'movies').pipe(catchError(this.handleError));
+  getAllMovies(): Observable<any> {
+    // Get Authorization token stored in local storage
+    const token = localStorage.getItem('token');
+    return this.http
+      .get(apiUrl + 'movies', {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + token,
+        }),
+      })
+      .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
   // Making the api call for the get one movie endpoint
-  public getOneMovie(title: any): Observable<any> {
+  getOneMovie(title: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/title/' + title)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the get director endpoint
-  public getDirector(director: any): Observable<any> {
+  getDirector(director: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/director/' + director)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the get genre endpoint
-  public getGenre(genre: any): Observable<any> {
+  getGenre(genre: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/genre/' + genre)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the get user endpoint
-  public getUser(username: any): Observable<any> {
+  getUser(username: any): Observable<any> {
     return this.http
       .get(apiUrl + 'users/' + username)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the get favorite movies for a user endpoint
-  public getFavoriteMovies(): Observable<any> {
+  getFavoriteMovies(): Observable<any> {
     return this.http
       .get(apiUrl + 'users/username/movies')
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the add a movie to favorite movies endpoint
-  public addFavoriteMovie(movie: any): Observable<any> {
+  addFavoriteMovie(movie: any): Observable<any> {
     return this.http
       .post(apiUrl + 'users/username/movies/' + movie, movie)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the edit user endpoint
-  public editUser(username: any): Observable<any> {
+  editUser(username: any): Observable<any> {
     return this.http
       .put(apiUrl + 'users/' + username, username)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the delete user endpoint
-  public deleteUser(username: any): Observable<any> {
+  deleteUser(username: any): Observable<any> {
     return this.http
       .delete(apiUrl + 'users/' + username)
       .pipe(catchError(this.handleError));
   }
 
   // Making the api call for the delete a movie from favorite movies endpoint
-  public deleteFavoriteMovie(movie: any): Observable<any> {
+  deleteFavoriteMovie(movie: any): Observable<any> {
     return this.http
       .delete(apiUrl + 'users/username/movies' + movie)
       .pipe(catchError(this.handleError));
+  }
+
+  /**
+   * extracts response data from HTTP response
+   * @param res
+   * @returns response body or empty object
+   */
+
+  private extractResponseData(res: any): any {
+    const body = res;
+    return body || {};
   }
 
   // Handling the error
