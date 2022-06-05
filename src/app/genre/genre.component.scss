@@ -1,12 +1,16 @@
-$backgroundColor: rgba(92, 93, 93, 0.05);
-$cardColor: white;
-$textColor: #343a40;
-$boxShadowColor: #e9ecef;
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$textColor: #fff;
+$cardColor: #17a3b8;
+$cardTextColor: #ffffff;
+$boxShadowColor: #3a6c7387;
 
 .genre-dialog {
   background-color: $cardColor;
   margin-top: 0px;
   box-shadow: none;
+  max-height: 550px;
 }
 
 .genre-dialog-title {
@@ -15,6 +19,7 @@ $boxShadowColor: #e9ecef;
 
 .genre-dialog-content {
   color: $textColor;
+  font-size: medium;
 }
 
 ::ng-deep .genre-custom > mat-dialog-container {
@@ -23,11 +28,12 @@ $boxShadowColor: #e9ecef;
 
 .genre-close-button.mat-stroked-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 15px;
+  right: 15px;
   padding: 0px;
   line-height: 14px;
   min-width: auto;
   border: none;
   font-size: 20px;
+  color: $textColor;
 }

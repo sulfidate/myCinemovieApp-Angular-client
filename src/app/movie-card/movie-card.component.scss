@@ -1,7 +1,10 @@
-$backgroundColor: rgba(92, 93, 93, 0.05);
-$cardColor: white;
-$textColor: #343a40;
-$boxShadowColor: #e9ecef;
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$buttonTextColor: #fff;
+$cardColor: #17a3b8;
+$cardTextColor: #ffffff;
+$boxShadowColor: #3a6c7387;
 
 .movie-view {
   display: flex;
@@ -30,25 +33,47 @@ $boxShadowColor: #e9ecef;
   height: 80px;
   display: flex;
   align-items: center;
-  color: $textColor;
+  color: $cardTextColor;
 }
 
-.movies-title {
+.mat-card-title {
   display: flex;
-  max-width: 210px;
+  max-width: 150px;
   justify-content: center;
   text-align: center;
   line-height: normal;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 img {
-  width: 250px;
-  height: 350px;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  margin: auto;
 }
 
-.mat-icon-button {
+.mat-icon {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 15px;
+  top: 45px;
+}
+
+.mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mat-button {
+  font-size: medium;
+  color: $textOnSpecialBlueColor;
+}
+.mat-button:hover {
+  color: $textOnSpecialBlueColor;
+
+  background-color: #1cc1dbb6;
 }

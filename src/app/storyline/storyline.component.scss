@@ -1,0 +1,39 @@
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$textColor: #fff;
+$cardColor: #17a3b8;
+$cardTextColor: #ffffff;
+$boxShadowColor: #3a6c7387;
+
+.storyline-dialog {
+  background-color: $cardColor;
+  margin-top: 0px;
+  box-shadow: none;
+  max-height: 550px;
+}
+
+.storyline-dialog-title {
+  color: $textColor;
+}
+
+.storyline-dialog-content {
+  color: $textColor;
+  font-size: medium;
+}
+
+::ng-deep .storyline-custom > mat-dialog-container {
+  background-color: $cardColor;
+}
+
+.storyline-close-button.mat-stroked-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 0px;
+  line-height: 14px;
+  min-width: auto;
+  border: none;
+  font-size: 20px;
+  color: $textColor;
+}

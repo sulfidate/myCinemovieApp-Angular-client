@@ -1,0 +1,71 @@
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$buttonTextColor: #fff;
+$cardColor: #17a3b8;
+$cardTextColor: #ffffff;
+$boxShadowColor: #3a6c7387;
+
+.main-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $backgroundColor;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 10px 5px 5px $boxShadowColor;
+  background-color: $cardColor;
+  color: $textOnSpecialBlueColor;
+  width: 900px;
+  height: 500px;
+  margin: 15px;
+  padding: 20px 3px;
+}
+
+.mat-card-header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: $cardTextColor;
+}
+
+.mat-card-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  //   width: auto;
+  //   height: auto;
+  //   object-fit: contain;
+  //   margin: auto;
+}
+
+.mat-icon {
+  //   position: absolute;
+  //   right: 15px;
+  //   top: 45px;
+}
+
+.mat-card-actions {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   align-items: center;
+}
+
+.mat-button {
+  color: $textOnSpecialBlueColor;
+}
+.mat-button:hover {
+  color: $textOnSpecialBlueColor;
+
+  background-color: #1cc1dbb6;
+}
