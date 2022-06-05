@@ -1,17 +1,70 @@
-<div style="display: flex">
+<div style="display: flex" class="movie-card">
   <mat-card *ngFor="let movie of movies; let i = index" style="flex: 1 1 auto">
     <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
-      <mat-card-subtitle
-        >Directed by: {{ movie.Director[1] }}</mat-card-subtitle
+      <mat-card-title
+        style="
+          height: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        {{ movie.Title }}</mat-card-title
       >
     </mat-card-header>
-    <img mat-card-image src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
+    <!-- This is the FavoriteMovies button -->
     <mat-card-actions>
-      <button mat-button color="primary">Genre</button>
-      <button mat-button color="primary">Director</button>
-      <button mat-button color="primary">Plot</button>
-      <mat-icon>favorite_border</mat-icon>
+      <mat-icon
+        *ngIf="isFav(movie._id)"
+        (click)="removeFromFavoriteMovies(movie._id)"
+        >favorite</mat-icon
+      >
+      <mat-icon
+        *ngIf="!isFav(movie._id)"
+        (click)="addToFavoriteMovies(movie._id)"
+        >favorite_border</mat-icon
+      >
+    </mat-card-actions>
+
+    <img
+      mat-card-image
+      style="width: 250px; height: 350px; object-fit: cover; margin: auto"
+      src="{{ movie.ImagePath }}"
+      alt="{{ movie.Title }}"
+    />
+    <mat-card-actions>
+      <!-- This is the genre button-->
+      <button
+        mat-button
+        color="primary"
+        (click)="openGenreDialog(movie.Genre[1], movie.Genre[2])"
+      >
+        Genre: {{ movie.Genre[1] }}
+      </button>
+      <!-- This is the director Button -->
+      <button
+        mat-button
+        color="primary"
+        (click)="
+          openDirectorDialog(
+            movie.Director[1],
+            movie.Director[2],
+            movie.Director[3],
+            movie.Director[4],
+            movie.Director[5]
+          )
+        "
+      >
+        Director: {{ movie.Director[1] }}
+      </button>
+      <!-- This is the storyline button -->
+      <button
+        mat-button
+        color="primary"
+        (click)="openStorylineDialog(movie.Description)"
+      >
+        Storyline
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

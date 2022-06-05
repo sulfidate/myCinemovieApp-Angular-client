@@ -14,15 +14,24 @@ import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { GenreComponent } from './genre/genre.component';
+import { DirectorComponent } from './director/director.component';
+import { StorylineComponent } from './storyline/storyline.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'user-profile', component: UserProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -33,6 +42,13 @@ const appRoutes: Routes = [
     UserLoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
+    GenreComponent,
+    DirectorComponent,
+    StorylineComponent,
+    UserProfileComponent,
+    HeaderComponent,
+    FooterComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,

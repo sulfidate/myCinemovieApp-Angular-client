@@ -1,0 +1,62 @@
+<div class="user-profile-page">
+  <!-- User Profile -->
+  <mat-card class="user-profile-card">
+    <mat-card-header class="user-profile-card-header">
+      <mat-card-title>User Profile</mat-card-title>
+    </mat-card-header>
+
+    <!-- View Profile Information -->
+    <mat-card-content class="user-profile-card-content">
+      <div class="user-profile-card-content-header">
+        <div class="user-profile-card-content-header-avatar">
+          <img
+            src="{{ 'https://placeimg.com/140/140/any' }}"
+            alt="User Avatar"
+            style="
+              border-radius: 8px;
+              width: 140px;
+              height: 140px;
+              object-fit: cover;
+              margin: 10px;
+            "
+          />
+        </div>
+        <div class="user-profile-card-content-header-name">
+          <h3>Username: {{ user.Username }}</h3>
+        </div>
+      </div>
+      <div class="user-profile-card-content-body">
+        <div class="user-profile-card-content-body-email">
+          <p>Email: {{ user.Email }}</p>
+        </div>
+        <div class="user-profile-card-content-body-phone">
+          <p>Birthday: {{ user.Birthday }}</p>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <!-- Edit Profile Buttons -->
+    <mat-card-actions class="user-profile-actions">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="openEditProfileDialog()"
+      >
+        <mat-icon>edit</mat-icon>
+        Edit Profile
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="deleteUser(user.Username)"
+      >
+        <mat-icon>delete_forever</mat-icon>
+        Delete Profile !!!
+      </button>
+      <button mat-button color="primary" (click)="logoutUser()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
