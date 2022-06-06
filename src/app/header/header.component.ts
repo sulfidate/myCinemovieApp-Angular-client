@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  /**
+   *
+   * @param router - router to navigate to user profile page when user clicks on profile icon
+   *
+   */
+
   constructor(
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
@@ -25,5 +31,10 @@ export class HeaderComponent implements OnInit {
 
   navToMovies() {
     this.router.navigate(['/movies']);
+  }
+
+  logOut(): void {
+    localStorage.clear(); // clear local storage
+    this.router.navigate(['/welcome']);
   }
 }

@@ -20,21 +20,25 @@ export class UserLoginFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  /**
+   * @description - This method is used to login the user and redirect to the dashboard/movies page
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (response) => {
-        // Logic for a successful user login goes here!
-        console.log(response);
-        localStorage.setItem('user', response.user.Username);
-        localStorage.setItem('token', response.token);
         this.dialogRef.close(); // Close the modal on success!
         this.snackBar.open('user logged in successfully!', 'OK', {
           duration: 2000,
         });
+        // console.log(response);
+        localStorage.setItem('user', response.user.Username);
+        localStorage.setItem('token', response.token);
+        // Redirect to dashboard/movies page
         this.router.navigate(['movies']);
       },
       (response) => {
-        console.log('response-data', response);
+        // console.log('response-data', response);
         this.snackBar.open('User login failed', 'OK', {
           duration: 2000,
         });

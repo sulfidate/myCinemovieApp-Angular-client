@@ -1,18 +1,12 @@
-<mat-card style="background-color: #17a2b8; color: white">
-  <button
-    mat-button
-    class="nav-brand"
-    style="font-size: large"
-    (click)="navToMovies()"
-  >
-    myCinemoviesApp-Angular
-  </button>
-  <button
-    mat-button
-    style="font-size: medium; float: right"
-    (click)="navToUserProfile()"
-  >
+<mat-card class="header">
+  <button mat-button class="nav-brand" (click)="navToMovies()">Movies</button>
+
+  <button mat-button class="btn-profile" (click)="navToUserProfile()">
     <mat-icon>account_circle</mat-icon>
     Profile
+  </button>
+
+  <button mat-button class="btn-logout" (click)="logOut()">
+    <mat-icon>exit_to_app</mat-icon>
   </button>
 </mat-card>

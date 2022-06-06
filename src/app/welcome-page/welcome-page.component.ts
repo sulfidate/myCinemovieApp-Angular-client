@@ -9,24 +9,33 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./welcome-page.component.scss'],
 })
 export class WelcomePageComponent implements OnInit {
-  title = 'Welcome to myCinemovieApp';
+  title = 'Welcome';
   constructor(public dialog: MatDialog) {}
+
   ngOnInit(): void {}
-  // This is the function responsible for opening the register dialog when the user clicks the button
+
+  /**
+   * function for opening the register dialog when the user clicks the signup button
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
-      // Assign the data to the dialog
+      // Assign dialog width
       width: '280px',
+      // Assign the data to the dialog
       data: {
         userData: { Username: '', Password: '', Email: '', Birthday: '' },
       },
     });
   }
-  // This is the function responsible for opening the login dialog when the user clicks the button
+
+  /**
+   * function for opening the login dialog when the user clicks the login button
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
-      // Assign the data to the dialog
+      // Assign dialog width
       width: '280px',
+      // Assign the data to the dialog
       data: {
         userData: { Username: '', Password: '' },
       },

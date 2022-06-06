@@ -1,5 +1,19 @@
-$backgroundColor: #17a2b8;
-$buttonTextColor: #fff;
-$cardColor: #17a3b827;
-$cardTextColor: #343a40;
-$boxShadowColor: #a8b6b827;
+// $backgroundColor: #17a2b8;
+// $buttonTextColor: #fff;
+// $cardColor: #17a3b827;
+// $cardTextColor: #343a40;
+// $boxShadowColor: #a8b6b827;
+
+$backgroundColor: #f8f9fa;
+$cardColor: #fff;
+$textColor: #343a40;
+$boxShadowColor: #e9ecef;
+
+.header {
+  border-bottom: $boxShadowColor;
+  background-color: $cardColor;
+}
+
+.btn-logout {
+  float: right;
+}
