@@ -1,19 +1,26 @@
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$textColor: #fff;
+$cardColor: #17a3b8;
+$boxShadowColor: #3a6c7387;
+
 $backgroundColor: #f8f9fa;
-$cardColor: #fff;
-$textColor: #343a40;
+// $cardColor: #fff;
+// $textColor: #343a40;
 $boxShadowColor: #e9ecef;
 
 .edit-profile-dialog {
   background-color: $cardColor;
   margin-top: 0px;
-  box-shadow: none;
+  box-shadow: $boxShadowColor;
 }
 
-.edit-profile-dialog-title {
+.mat-card-title {
   color: $textColor;
 }
 
-.edit-profile-dialog-content {
+.mat-card-content {
   color: $textColor;
 }
 

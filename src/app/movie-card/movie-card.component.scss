@@ -3,13 +3,13 @@ $textOnSpecialBlueColor: #ffffff;
 $backgroundColor: #fff;
 $buttonTextColor: #fff;
 $cardColor: #17a3b8;
-$cardTextColor: #ffffff;
-$boxShadowColor: #3a6c7387;
+$textColor: #ffffff;
+$boxShadowColor: #104c5487;
 
 $backgroundColor: #f8f9fa;
-$cardColor: #fff;
-$textColor: #343a40;
-$boxShadowColor: #e9ecef;
+// $cardColor: #fff;
+// $textColor: #343a40;
+// $boxShadowColor: #e9ecef;
 
 .movie-view {
   display: flex;
@@ -32,6 +32,7 @@ $boxShadowColor: #e9ecef;
   width: 280px;
   margin: 15px;
   padding: 20px 3px;
+  color: $textColor;
 }
 
 .mat-card-header {
@@ -41,12 +42,19 @@ $boxShadowColor: #e9ecef;
   color: $textColor;
 }
 
-.movies-title {
+.mat-card-title {
   display: flex;
   max-width: 210px;
-  justify-content: center;
-  text-align: center;
+  justify-content: left;
+  text-align: left;
   line-height: normal;
+  padding-top: 20px;
+}
+
+.mat-card-subtitle {
+  color: $textColor;
+  font-size: 12px;
+  padding-top: 20px;
 }
 
 img {
