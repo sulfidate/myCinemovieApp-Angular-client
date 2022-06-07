@@ -1,0 +1,26 @@
+$backgroundColor: #f8f9fa;
+$cardColor: #fff;
+$textColor: #343a40;
+$boxShadowColor: #e9ecef;
+
+.user-registration-form {
+  background-color: $cardColor;
+  margin-top: 0px;
+  box-shadow: none;
+}
+
+.mat-card-title {
+  color: $textColor;
+}
+
+.mat-card-content {
+  color: $textColor;
+}
+
+::ng-deep .signup-custom > mat-form-field {
+  background-color: $cardColor;
+}
+
+.mat-card-actions {
+  display: flex;
+}

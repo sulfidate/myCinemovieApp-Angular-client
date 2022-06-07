@@ -9,10 +9,10 @@
       <mat-form-field>
         <input
           matInput
-          placeholder="Username is not editable"
+          [(ngModel)]="userData.Username"
+          placeholder="Username"
           type="text"
           name="Username"
-          disabled="true"
         />
       </mat-form-field>
       <mat-form-field>

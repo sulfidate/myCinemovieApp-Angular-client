@@ -3,14 +3,18 @@ $textOnSpecialBlueColor: #ffffff;
 $backgroundColor: #fff;
 $textColor: #fff;
 $cardColor: #17a3b8;
-$cardTextColor: #ffffff;
+$textColor: #ffffff;
 $boxShadowColor: #3a6c7387;
+
+$backgroundColor: #f8f9fa;
+// $cardColor: #fff;
+// $textColor: #343a40;
+$boxShadowColor: #e9ecef;
 
 .storyline-dialog {
   background-color: $cardColor;
   margin-top: 0px;
   box-shadow: none;
-  max-height: 550px;
 }
 
 .storyline-dialog-title {
@@ -19,7 +23,6 @@ $boxShadowColor: #3a6c7387;
 
 .storyline-dialog-content {
   color: $textColor;
-  font-size: medium;
 }
 
 ::ng-deep .storyline-custom > mat-dialog-container {
@@ -28,12 +31,11 @@ $boxShadowColor: #3a6c7387;
 
 .storyline-close-button.mat-stroked-button {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 0;
+  right: 0;
   padding: 0px;
   line-height: 14px;
   min-width: auto;
   border: none;
   font-size: 20px;
-  color: $textColor;
 }

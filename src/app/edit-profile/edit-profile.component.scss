@@ -1,0 +1,33 @@
+$specialBlueColor: #17a2b8;
+$textOnSpecialBlueColor: #ffffff;
+$backgroundColor: #fff;
+$textColor: #fff;
+$cardColor: #17a3b8;
+$boxShadowColor: #3a6c7387;
+
+$backgroundColor: #f8f9fa;
+// $cardColor: #fff;
+// $textColor: #343a40;
+$boxShadowColor: #e9ecef;
+
+.edit-profile-dialog {
+  background-color: $cardColor;
+  margin-top: 0px;
+  box-shadow: $boxShadowColor;
+}
+
+.mat-card-title {
+  color: $textColor;
+}
+
+.mat-card-content {
+  color: $textColor;
+}
+
+::ng-deep .edit-profile-custom > mat-dialog-container {
+  background-color: $cardColor;
+}
+
+.edit-profile-actions {
+  display: flex;
+}

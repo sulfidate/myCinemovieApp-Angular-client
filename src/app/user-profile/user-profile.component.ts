@@ -23,30 +23,44 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
-  // Making the api call for the get user  endpoint
+  /**
+   * Making the api call for the get user endpoint to get the user details from the database and store it in the user variable
+   * @returns user - the user details
+   * @memberof UserProfileComponent
+   */
   getUser(): void {
     this.fetchMovies.getUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
+      // console.log(this.user);
       return this.user;
     });
   }
 
-  // Making the api call for the update user endpoint
+  /**
+   * Making the api call for the update user endpoint to update the user details in the database
+   * @param user - the user details
+   * @memberof UserProfileComponent
+   * @returns user - the user details
+   */
   updateUser(user: any): void {
     this.fetchMovies.editUser(user).subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
+      // console.log(this.user);
       return this.user;
     });
   }
 
-  // Making the api call for the delete user endpoint
+  /**
+   * Making the api call for the delete user endpoint to delete the user details from the database
+   * @param user - the user details
+   * @memberof UserProfileComponent
+   *  @returns user - the user details
+   */
   deleteUser(user: any): void {
     if (confirm('Are you sure you want to delete your account?')) {
       this.fetchMovies.deleteUser(user).subscribe((resp: any) => {
         this.user = resp;
-        console.log(this.user);
+        // console.log(this.user);
         return this.user;
       });
       this.snackBar.open('Account deleted successfully', '', {
@@ -61,27 +75,30 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  // Making the api call for the logout user endpoint
+  /** Making the api call for the logout user endpoint to logout the user from the database
+   * @memberof UserProfileComponent
+   * @returns user - the user details
+   */
   logoutUser(): void {
     this.fetchMovies.logoutUser().subscribe((resp: any) => {
       this.user = resp;
-      console.log(this.user);
+      // console.log(this.user);
       return this.user;
     });
-
     this.router.navigate(['/']);
-
     this.snackBar.open('Logged out successfully', '', {
       duration: 3000,
       verticalPosition: 'top',
       horizontalPosition: 'center',
     });
-
     localStorage.removeItem('token');
   }
 
-  // open dialog -> edit profile
-
+  /**
+   * Making the api call for the edit user endpoint to open the edit profile dialog box
+   * @memberof UserProfileComponent
+   * @returns user - the user details
+   */
   openEditProfileDialog(): void {
     const dialogRef = this.dialog.open(EditProfileComponent, {
       width: '500px',
@@ -89,7 +106,6 @@ export class UserProfileComponent implements OnInit {
         user: this.user,
       },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.updateUser(result);

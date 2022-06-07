@@ -1,8 +1,29 @@
-<div class="movie-view">
-  <mat-card *ngFor="let movie of movies; let i = index">
+<app-header></app-header>
+<div class="movie-view" style="display: flex">
+  <mat-card *ngFor="let movie of movies; let i = index" style="flex: 1 1 auto">
     <mat-card-header>
       <mat-card-title> {{ movie.Title }}</mat-card-title>
+
+      <mat-card-subtitle
+        >Directed by:
+        <!-- This is the director Button -->
+        <button
+          mat-button
+          (click)="
+            openDirectorDialog(
+              movie.Director[1],
+              movie.Director[2],
+              movie.Director[3],
+              movie.Director[4],
+              movie.Director[5]
+            )
+          "
+        >
+          {{ movie.Director[1] }}
+        </button></mat-card-subtitle
+      >
     </mat-card-header>
+
     <!-- This is the FavoriteMovies button -->
     <mat-card-actions>
       <mat-icon
@@ -14,12 +35,18 @@
       <mat-icon
         *ngIf="!isFav(movie._id)"
         (click)="addToFavoriteMovies(movie._id)"
-        style="color: white"
+        style="color: rgb(221, 221, 184)"
         >favorite_border</mat-icon
       >
     </mat-card-actions>
 
-    <img mat-card-image src="{{ movie.ImagePath }}" alt="{{ movie.Title }}" />
+    <img
+      mat-card-image
+      src="{{ movie.ImagePath }}"
+      alt="{{ movie.Title }}"
+      style="width: 280px"
+    />
+
     <mat-card-actions>
       <!-- This is the genre button-->
       <button
@@ -28,21 +55,7 @@
       >
         Genre: {{ movie.Genre[1] }}
       </button>
-      <!-- This is the director Button -->
-      <button
-        mat-button
-        (click)="
-          openDirectorDialog(
-            movie.Director[1],
-            movie.Director[2],
-            movie.Director[3],
-            movie.Director[4],
-            movie.Director[5]
-          )
-        "
-      >
-        Director: {{ movie.Director[1] }}
-      </button>
+
       <!-- This is the storyline button -->
       <button mat-button (click)="openStorylineDialog(movie.Description)">
         Storyline
@@ -50,3 +63,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
+<app-footer></app-footer>

@@ -3,14 +3,21 @@ $textOnSpecialBlueColor: #ffffff;
 $backgroundColor: #fff;
 $buttonTextColor: #fff;
 $cardColor: #17a3b8;
-$cardTextColor: #ffffff;
+$textColor: #ffffff;
 $boxShadowColor: #3a6c7387;
+
+$backgroundColor: #f8f9fa;
+// $cardColor: #fff;
+// $textColor: #343a40;
+// $boxShadowColor: #e9ecef;
 
 .user-profile-page {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: $backgroundColor;
+  padding: 50px 0;
 }
 
 .mat-card {
@@ -19,55 +26,28 @@ $boxShadowColor: #3a6c7387;
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 0px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 10px 5px 5px $boxShadowColor;
   background-color: $cardColor;
-  color: $textOnSpecialBlueColor;
-  font-size: medium;
-  width: 900px;
-  height: 500px;
-  margin: 15px;
-  padding: 20px 3px;
 }
 
 .mat-card-header {
-  //   height: 80px;
-  //   display: flex;
-  //   align-items: center;
-  //   color: $cardTextColor;
+  margin-bottom: 20px;
+  color: $textColor;
+  display: flex;
+  justify-content: center;
 }
 
-.mat-card-title {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
+.mat-card-content {
+  color: $textColor;
 }
 
-img {
-  //   width: auto;
-  //   height: auto;
-  //   object-fit: contain;
-  //   margin: auto;
-}
-
-.mat-icon {
-  //   position: absolute;
-  //   right: 15px;
-  //   top: 45px;
-}
-
-.mat-card-actions {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-between;
-  //   align-items: center;
-}
-
-.mat-button {
-  font-size: medium;
-  color: $textOnSpecialBlueColor;
-}
-.mat-button:hover {
-  color: $textOnSpecialBlueColor;
-
-  background-color: #1cc1dbb6;
+.mat-card > .mat-card-actions:last-child {
+  margin-bottom: -8px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
 }

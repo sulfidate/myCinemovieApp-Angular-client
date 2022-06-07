@@ -1,19 +1,20 @@
-<div class="main-page">
+<div class="welcome-page">
   <mat-card>
     <mat-card-header>
       <mat-card-title> Welcome to myCinemovieApp! </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        myCinemovieApp is a web application that allows you to search for movies
-        and view their information.
-      </p>
+      <p>A web application driven by Angular and Material Design.</p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button (click)="openUserRegistrationDialog()">
+        <mat-icon>person_add</mat-icon>
         Sign Up
       </button>
-      <button mat-raised-button (click)="openUserLoginDialog()">Login</button>
+      <button mat-raised-button (click)="openUserLoginDialog()">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>

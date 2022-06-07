@@ -3,8 +3,13 @@ $textOnSpecialBlueColor: #ffffff;
 $backgroundColor: #fff;
 $buttonTextColor: #fff;
 $cardColor: #17a3b8;
-$cardTextColor: #ffffff;
-$boxShadowColor: #3a6c7387;
+$textColor: #ffffff;
+$boxShadowColor: #104c5487;
+
+$backgroundColor: #f8f9fa;
+// $cardColor: #fff;
+// $textColor: #343a40;
+// $boxShadowColor: #e9ecef;
 
 .movie-view {
   display: flex;
@@ -27,53 +32,39 @@ $boxShadowColor: #3a6c7387;
   width: 280px;
   margin: 15px;
   padding: 20px 3px;
+  color: $textColor;
 }
 
 .mat-card-header {
   height: 80px;
   display: flex;
   align-items: center;
-  color: $cardTextColor;
+  color: $textColor;
 }
 
 .mat-card-title {
   display: flex;
-  max-width: 150px;
-  justify-content: center;
-  text-align: center;
+  max-width: 210px;
+  justify-content: left;
+  text-align: left;
   line-height: normal;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 20px;
+}
+
+.mat-card-subtitle {
+  color: $textColor;
+  font-size: 12px;
+  padding-top: 20px;
 }
 
 img {
-  width: auto;
-  height: auto;
+  width: 250px;
+  height: 350px;
   object-fit: contain;
-  margin: auto;
 }
 
 .mat-icon {
   position: absolute;
-  right: 15px;
-  top: 45px;
-}
-
-.mat-card-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.mat-button {
-  font-size: medium;
-  color: $textOnSpecialBlueColor;
-}
-.mat-button:hover {
-  color: $textOnSpecialBlueColor;
-
-  background-color: #1cc1dbb6;
+  right: 5px;
+  top: 5px;
 }

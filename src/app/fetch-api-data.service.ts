@@ -13,27 +13,36 @@ const apiUrl = 'https://mycinemoviedatabase.herokuapp.com/';
   providedIn: 'root',
 })
 export class FetchApiDataService {
-  // Inject the HttpClient module to the constructor params
-  // This will provide HttpClient to the entire class,making it available via this.http
+  // Inject the HttpClient module to the constructor params - this will provide HttpClient to the entire class,making it available via this.http
   constructor(private http: HttpClient) {}
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Making the api call for the user registration endpoint
+   * @param userDetails
+   * @returns a new user object in JSON format
+   */
   public userRegistration(userDetails: any): Observable<any> {
-    console.log('userDetails', userDetails);
+    // console.log('userDetails', userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the user login endpoint
+  /**
+   * Making the api call for the user login endpoint
+   * @param userDetails
+   * @returns data of the user in JSON format
+   */
   public userLogin(userDetails: any): Observable<any> {
-    console.log('userDetails', userDetails);
     return this.http
       .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the get all movies endpoint
+  /**
+   * Making the api call for the get all movies endpoint
+   * @returns array of all movies in JSON format
+   */
   getAllMovies(): Observable<any> {
     // Get Authorization token stored in local storage
     const token = localStorage.getItem('token');
@@ -46,28 +55,44 @@ export class FetchApiDataService {
       .pipe(map(this.extractResponseData), catchError(this.handleError));
   }
 
-  // Making the api call for the get one movie endpoint
+  /**
+   * Making the api call for the get one movie endpoint
+   * @param title
+   * @returns JSON object holding movie data
+   */
   getOneMovie(title: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/title/' + title)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the get director endpoint
+  /**
+   * Making the api call for the get director endpoint
+   * @param director
+   * @returns JSON obejct holding director data
+   */
+
   getDirector(director: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/director/' + director)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the get genre endpoint
+  /**
+   * Making the api call for the get genre endpoint
+   * @param genre
+   * @returns JSON object holding genre data
+   */
   getGenre(genre: any): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/genre/' + genre)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the get user endpoint
+  /**
+   * Making the api call for the get user endpoint
+   * @returns JSON object holding data about the requested user
+   */
   getUser(): Observable<any> {
     // Get Authorization token stored in local storage
     const token = localStorage.getItem('token');
