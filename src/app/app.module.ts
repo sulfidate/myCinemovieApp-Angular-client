@@ -27,6 +27,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MovieViewComponent } from './movie-view/movie-view.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     EditProfileComponent,
+    MovieViewComponent,
   ],
   imports: [
     BrowserModule,
