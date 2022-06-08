@@ -27,10 +27,10 @@ export class EditProfileComponent implements OnInit {
    * @returns userData - the user details
    */
   editUser(): void {
-    console.log(this.userData);
+    // console.log(this.userData);
     this.fetchApiData.editUser(this.userData).subscribe((result) => {
       this.dialogRef.close();
-      console.log(result);
+      // console.log(result);
       // if result is successful, show a snackbar
       this.snackBar.open('User details updated', '', {
         duration: 2000,
