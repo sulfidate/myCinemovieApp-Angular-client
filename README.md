@@ -2,6 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
+## Objective
+Using Angular, build the client-side for an application called myFlix based on its existing server-side code (REST API and database), with supporting documentation.
+
+
+
+## Context
+- As the modern workplace continues to transform, remote work has become more important than ever. Whether you end up working in an office or from home, it's crucial that you know how to communicate and collaborate effectively.
+- In this Achievement, you'll learn how to work with others by writing and sharing documentation with your peers, providing feedback, and making a contribution to the tech community. The ability to create detailed and straightforward handoffs for other developers is an indispensable skill that you'll need when applying for a job.
+- Opportunities to engage with these skills will be provided by your Achievement 6 project. For your project, you'll return to the myFlix app's server-side from Achievement 2 and build the client-side interface for a new single-page, responsive app, one that includes several interface views that will handle data through the previously-defined REST API endpoints.
+- This time you'll use Angular, instead of React. Angular is an extremely popular framework that can be used for a wide range of mobile and desktop applications. It's particularly well-suited to large projects, as well as projects requiring a complex user interface because it comes with a variety of built-in modules and services.
+- As you work on this project, you’ll use Agile project management techniques including user stories, story points, and a kanban board. These techniques are commonly used by companies in the tech industry. At the same time, you'll practice communicating the skills and knowledge that you're acquiring with technical interview questions, before adding the project to, and finalizing, your online portfolio.
+
+### Technical Requirements
+- The application must be written in Angular (version 9 or later)
+- The application requires the latest version of Node.js and npm package
+- The application must contain user registration and login forms
+- The application must be designed using Angular Material
+- The application's codebase must contain comments using Typedoc
+- The project must contain technical documentation using JSDoc
+- The project must be hosted on GitHub Pages
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
